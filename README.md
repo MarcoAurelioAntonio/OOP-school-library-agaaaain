@@ -19,7 +19,7 @@
 # 📖 OOP-school-library <a name="about-project"></a>
 > A library tool to record what books are in the library and who borrows them.
 
-![image](https://user-images.githubusercontent.com/99001924/204068447-00c12f37-34eb-49ac-a8bd-6841660286a5.png)
+*![image](https://user-images.githubusercontent.com/99001924/204068447-00c12f37-34eb-49ac-a8bd-6841660286a5.png)
 
 
 
