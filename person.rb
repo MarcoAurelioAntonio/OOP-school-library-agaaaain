@@ -1,6 +1,8 @@
-class Person
-  sttr_reader :id
-  sttr_accessor :name, :age
+require './nameable'
+
+class Person < Nameabl3
+  attr_reader :id
+  attr_accessor :name, :age
 
   def initialize(id, age, name = 'Unknown', parent_permission: true)
     @id = id
@@ -10,7 +12,7 @@ class Person
   end
 
   def can_use_services?
-    is_of_age? || @parent_permission
+    of_age?() || @parent_permission
   end
 
   private
