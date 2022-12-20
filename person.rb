@@ -1,6 +1,6 @@
 require './nameable'
 
-class Person < Nameabl3
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
