@@ -2,8 +2,6 @@ require './person'
 require './classroom'
 
 class Student < Person
-  attr_accessor :classroom # This is the classroom the student belongs to.
-
   def initialize(classroom, age, name = 'Unknown', parent_permission: true)
     super(age, name, parent_permission)
     @classroom = classroom
@@ -13,6 +11,7 @@ class Student < Person
     '¯(ツ)/¯'
   end
 
+  # This is the classroom the student belongs to.
   def classroom=(classroom)
     @classroom = classroom
     # When setting the classroom for a student it also adds it to the classrooms' students.
