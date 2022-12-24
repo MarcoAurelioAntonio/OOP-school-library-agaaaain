@@ -1,5 +1,5 @@
 class Book
-  attr_accesor :title, :author, :rentals
+  attr_accessor :title, :author, :rentals
 
   def initialize(title, author)
     @title = title
@@ -9,5 +9,13 @@ class Book
 
   def add_rental(person, date)
     @rentals << Rental.new(date, self, person)
+  end
+
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+
+  def add_full_rental(rental)
+    @rentals << rental
   end
 end
