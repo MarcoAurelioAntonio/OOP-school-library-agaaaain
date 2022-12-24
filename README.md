@@ -59,14 +59,15 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/MarcoAurelioAntonioC/OOP-school-library.git
+  git clone https://github.com/MarcoAurelioAntonioC/OOP-school-library-agaaaain
+.git
 ```
 ### Install
 
 Install this project with:
 
 ```sh
-  cd OOP-school-library
+  cd OOP-school-library-agaaaain
   bundle install
 ```
 ### Usage
