@@ -1,23 +1,18 @@
-require './app'
+require_relative 'app'
 
 class Interface
+  @welcome = 'Welcome to School Library App!', ''
   def interface
-    puts '   ****************************************   '
-    puts ' ******* WELCOME!!... to our library! ******* '
-    puts '   ****************************************   '
-    puts '                                              '
-    puts '                                              '
-    puts '==========================='
-    puts 'CHOOSE ONE OPTION YOU LIKE: '
-    puts '==========================='
-    puts '                           '
-    puts '   1 --> See all the books'
-    puts '   2 --> See all people'
-    puts '   3 --> Load a person data in system'
-    puts '   4 --> Load a book data'
-    puts '   5 --> Make a rental'
-    puts '   6 --> I want to know all rentals of a person ("id" based search)'
-    puts '   7 --> Say goodbye!!'
+    puts @welcome
+    puts 'Please choose and option by entering a number: '
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rentals'
+    puts '7 - Exit'
+    @welcome = ''
   end
 end
 
@@ -27,35 +22,34 @@ class Main
     @interface = Interface.new
   end
 
-  def handle_selection
+  def select
     option = gets.chomp.to_i
     selection = {
-      1 => 'list_all_books',
-      2 => 'list_all_people',
+      1 => 'list_books',
+      2 => 'list_people',
       3 => 'create_person',
       4 => 'create_book',
       5 => 'create_rental',
-      6 => 'list_all_rentals_for_person_id'
+      6 => 'list_rentals_person'
     }
     case option
     when 1..6
       @app.send(selection[option])
       run
     when 7
-      puts '*** It was a pleasure! Bye Bye!! ***'
+      puts 'Thank you for using this App!'
     else
-      puts '                                                                   | |'
-      puts 'That is not a valid option, USE YOUR FINGER WISELLY THIS TIME DUDE x x'
+      puts 'Incorrect Input: Option does not exist'
       run
     end
   end
 
   def run
     @interface.interface
-    handle_selection
+    select
   end
 
-  private :handle_selection
+  private :select
 end
 
 Main.new.run

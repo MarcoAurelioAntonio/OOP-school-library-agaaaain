@@ -1,3 +1,6 @@
+require_relative 'book'
+require_relative 'person'
+
 class Rental
   attr_accessor :date, :book, :person
 
@@ -5,7 +8,12 @@ class Rental
     @date = date
     @book = book
     @person = person
-    book.add_rental(self)
-    person.add_rental(self)
+    book.rentals << self
+    person.rentals << self
   end
+
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+
 end
